@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist.mjs",
+    "composite": true,
+    "lib": ["es2015", "dom"]
+  },
+  "include": ["src/**/*.ts", "src/**/*d.ts"],
+  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
+  "references": [
+    {
+      "path": "./tsconfig.mjs.spec.json"
+    }
+  ]
+}
