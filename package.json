@@ -8,11 +8,19 @@
   ],
   "scripts": {
     "build": "npx tsc -p ./tsconfig.json",
+    "lint": "npx eslint  -c .eslintrc.json src/**/*.ts",
+    "lint:fix": "npm run lint -- --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "main": "index.js",
   "devDependencies": {
-    "typescript": "^5.5.4"
+    "@typescript-eslint/eslint-plugin": "7.18.0",
+    "@typescript-eslint/parser": "7.18.0",
+    "eslint": "8.57.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-airbnb-typescript": "18.0.0",
+    "eslint-plugin-import": "2.29.1",
+    "typescript": "5.5.4"
   },
   "dependencies": {
     "tslib": "^2.6.3"
