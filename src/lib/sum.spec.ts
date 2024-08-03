@@ -1,5 +1,5 @@
 // sum.test.ts
-import sum from './index';
+import sum from './sum';
 
 describe('sum function', () => {
   test('should add two positive numbers correctly', () => {

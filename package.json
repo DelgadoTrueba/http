@@ -6,19 +6,23 @@
   "keywords": [
     "http"
   ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DelgadoTrueba/http"
+  },
   "scripts": {
     "build": "npm run build:cjs && npm run build:mjs",
     "build:cjs": "npx tsc -p tsconfig.cjs.json",
     "build:mjs": "npx tsc -p tsconfig.mjs.json",
     "lint": "npx eslint  -c .eslintrc.json src/**/*.ts",
     "lint:fix": "npm run lint -- --fix",
-    "test": "npx jest -c jest.config.js",
+    "test": "npm run test:cjs && npm run test:mjs",
     "test:cjs": "npx jest -c jest.cjs.config.js",
     "test:mjs": "npx jest -c jest.mjs.config.js",
     "test:coverage": "npm run test -- --coverage",
     "prepare": "husky"
   },
-  "main": "index.js",
   "devDependencies": {
     "@commitlint/cli": "19.3.0",
     "@commitlint/config-conventional": "19.2.2",
@@ -43,5 +47,21 @@
   },
   "dependencies": {
     "tslib": "^2.6.3"
-  }
+  },
+  "main": "./dist.cjs/src/index.js",
+  "exports": {
+    ".": {
+      "require": "./dist.cjs/src/index.js",
+      "import": "./dist.mjs/src/index.js",
+      "default": "./dist.cjs/src/index.js",
+      "types": "./interfaces/src/index.d.ts"
+    },
+    "./public-api": {
+      "require": "./dist.cjs/src/public-api.js",
+      "import": "./dist.mjs/src/public-api.js",
+      "default": "./dist.cjs/src/public-api.js",
+      "types": "./interfaces/src/public-api.d.ts"
+    }
+  },
+  "sideEffects": false
 }
