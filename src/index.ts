@@ -1,3 +1,2 @@
-export const sum = (a: number, b: number): number => {
-    return a + b
-}
+/* eslint-disable import/export */
+export * from './lib/sum';
