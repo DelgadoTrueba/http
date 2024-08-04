@@ -1,6 +1,6 @@
 {
   "name": "@delgadotrueba/http",
-  "version": "0.0.1",
+  "version": "0.0.9",
   "description": "httpService and httpMockService",
   "author": "delgadotrueba",
   "keywords": [
@@ -48,6 +48,11 @@
   "dependencies": {
     "tslib": "^2.6.3"
   },
+  "files": [
+    "dist.cjs/",
+    "dist.mjs/",
+    "interfaces/"
+  ],
   "main": "./dist.cjs/src/index.js",
   "exports": {
     ".": {
