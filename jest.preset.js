@@ -10,6 +10,7 @@ module.exports = {
       },
     ],
   },
+  transformIgnorePatterns: ['node_modules'],
   coverageThreshold: {
     global: {
       statements: 40,

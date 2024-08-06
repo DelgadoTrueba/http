@@ -1,2 +1,1 @@
-/* eslint-disable import/export */
-export * from './lib/sum';
+export * from './lib/Http.service';

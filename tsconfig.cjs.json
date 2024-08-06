@@ -4,10 +4,9 @@
     "outDir": "./dist.cjs",
     "composite": true,
     "module": "commonjs",
-    "moduleResolution": "node",
     "types": ["node"]
   },
-  "include": ["src/**/*.ts", "src/**/*d.ts"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts"],
   "exclude": [
     "jest.cjs.config.ts",
     "src/**/*.spec.ts",
