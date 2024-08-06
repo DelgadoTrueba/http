@@ -6,11 +6,12 @@
     "baseUrl": ".",
     "target": "es2015",
     "module": "esnext",
+    "moduleResolution": "node",
     /*Emit*/
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     /*Config*/
-    "lib": ["es2020"],
+    "lib": ["es2020", "dom"],
     "importHelpers": true,
     "sourceMap": true,
     "declaration": true,
