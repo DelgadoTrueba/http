@@ -1,6 +1,6 @@
 {
   "name": "@delgadotrueba/http",
-  "version": "0.0.10",
+  "version": "1.0.0",
   "description": "httpService and httpMockService",
   "author": "delgadotrueba",
   "keywords": [
