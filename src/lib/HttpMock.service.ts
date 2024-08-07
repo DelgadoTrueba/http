@@ -11,16 +11,11 @@ import type {
   HttpDeleteRequest,
 } from './model/request/HttpRequest.model';
 import type { HttpResponse } from './model/response/HttpResponse.model';
-import { HttpHeaderRequest } from './model/request/HttpHeaderRequest.model';
 import { HttpResponseError } from './model/response/HttpResponseError.model';
 import { sleep } from '../utils/sleep';
 import { removeBaseURL } from '../utils/url';
 import { isPlainObject } from '../utils/object';
-
-export const BASE_HTTP_HEADER: HttpHeaderRequest = {
-  Accept: 'application/json',
-  'Content-Type': 'application/json',
-};
+import { BASE_HTTP_HEADER } from './Http.interface.service';
 
 export class HttpMockService implements HttpInterfaceMockAdapter {
   private mockResponsesGet = new Map<string, MockAdapterResponseFnc<any>>();

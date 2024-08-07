@@ -1,5 +1,7 @@
-import { HttpInterfaceService } from './Http.interface.service';
-import { HttpHeaderRequest } from './model/request/HttpHeaderRequest.model';
+import {
+  BASE_HTTP_HEADER,
+  HttpInterfaceService,
+} from './Http.interface.service';
 import {
   HTTP_VERBS,
   HttpDeleteRequest,
@@ -13,11 +15,6 @@ import { HttpResponse } from './model/response/HttpResponse.model';
 import { HttpResponseError } from './model/response/HttpResponseError.model';
 
 import { isPlainObject } from '../utils/object';
-
-export const BASE_HTTP_HEADER: HttpHeaderRequest = {
-  Accept: 'application/json',
-  'Content-Type': 'application/json', // TODO only JSON.stringify
-};
 
 export class HttpService implements HttpInterfaceService {
   private http({ method, endpoint, headers, body }: HttpRequest) {

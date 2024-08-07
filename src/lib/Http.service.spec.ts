@@ -1,6 +1,6 @@
 import getGlobalObject from '../utils-test/getGlobalObject';
 
-import { BASE_HTTP_HEADER, HttpService } from './Http.service';
+import { HttpService } from './Http.service';
 import { HttpResponse } from './model/response/HttpResponse.model';
 import { HttpStatusResponse } from './model/response/HttpStatusCodeResponse.model';
 
@@ -8,6 +8,7 @@ import { HTTP_VERBS } from './model/request/HttpRequest.model';
 import { HttpRequestMock } from './model/request/mocks/HttpRequest.mock';
 import { HttpResponseMock } from './model/response/mocks/HttpResponse.mock';
 import { HttpResponseError } from './model/response/HttpResponseError.model';
+import { BASE_HTTP_HEADER } from './Http.interface.service';
 
 const setup = (
   response: HttpResponse<unknown> = new Response(null, { status: 200 }),

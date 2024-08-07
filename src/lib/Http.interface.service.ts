@@ -1,4 +1,5 @@
 /* eslint-disable import/prefer-default-export */
+import { HttpHeaderRequest } from './model/request/HttpHeaderRequest.model';
 import {
   HttpDeleteRequest,
   HttpGetRequest,
@@ -7,6 +8,11 @@ import {
   HttpPutRequest,
 } from './model/request/HttpRequest.model';
 import { HttpResponse } from './model/response/HttpResponse.model';
+
+export const BASE_HTTP_HEADER: HttpHeaderRequest = {
+  Accept: 'application/json',
+  'Content-Type': 'application/json', // TODO only JSON.stringify
+};
 
 export abstract class HttpInterfaceService {
   abstract get<T>({
