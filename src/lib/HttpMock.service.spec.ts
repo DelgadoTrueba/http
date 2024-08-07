@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/dot-notation  */
 
-import { BASE_HTTP_HEADER, HttpMockService } from './HttpMock.service';
+import { HttpMockService } from './HttpMock.service';
 import { HttpResponse } from './model/response/HttpResponse.model';
 import { HttpStatusResponse } from './model/response/HttpStatusCodeResponse.model';
 
@@ -10,6 +10,7 @@ import { HttpResponseMock } from './model/response/mocks/HttpResponse.mock';
 import { MockAdapterResponseFnc } from './HttpMock.interface.service';
 import { HttpRequestMock } from './model/request/mocks/HttpRequest.mock';
 import { HttpResponseError } from './model/response/HttpResponseError.model';
+import { BASE_HTTP_HEADER } from './Http.interface.service';
 
 export function getPathname(url: string): string {
   const urlObject = new URL(url);
