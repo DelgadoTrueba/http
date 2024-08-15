@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/DelgadoTrueba/http/compare/v1.0.2...v1.0.3) (2024-08-15)
+
+
+### Miscellaneous Chores
+
+* release 1.0.3 ([b1b7f7f](https://github.com/DelgadoTrueba/http/commit/b1b7f7f2bae0097fcc1c01d7652fd7b5e7fa6ff2))
+
 ## [1.0.2](https://github.com/DelgadoTrueba/http/compare/v1.0.1...v1.0.2) (2024-08-07)
 
 ### Miscellaneous Chores
