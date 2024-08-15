@@ -17,7 +17,19 @@ import { HttpResponseError } from './model/response/HttpResponseError.model';
 import { isPlainObject } from '../utils/object';
 
 export class HttpService implements HttpInterfaceService {
-  private http({ method, endpoint, headers, body }: HttpRequest) {
+  /**
+   * Perform an HTTP request and returns a parsed JSON object.
+   *
+   * @param {HttpRequest} httpOptions The HTTP request options.
+   * @returns {Promise<HttpResponse<T>>} A promise that resolves with the HTTP response parsed as JSON.
+   * @throws {HttpResponseError} Throws an error if the response is not ok.
+   */
+  private http<T>({
+    method,
+    endpoint,
+    headers,
+    body,
+  }: HttpRequest): Promise<HttpResponse<T>> {
     const bodyIsJSON = Array.isArray(body) || isPlainObject(body);
     const config = {
       method,
@@ -36,7 +48,7 @@ export class HttpService implements HttpInterfaceService {
   }
 
   get<T>({ endpoint, headers }: HttpGetRequest): Promise<HttpResponse<T>> {
-    return this.http({
+    return this.http<T>({
       method: HTTP_VERBS.GET,
       endpoint,
       headers,
@@ -48,7 +60,7 @@ export class HttpService implements HttpInterfaceService {
     body,
     headers,
   }: HttpPostRequest): Promise<HttpResponse<T>> {
-    return this.http({
+    return this.http<T>({
       method: HTTP_VERBS.POST,
       endpoint,
       headers,
@@ -61,7 +73,7 @@ export class HttpService implements HttpInterfaceService {
     body,
     headers,
   }: HttpPutRequest): Promise<HttpResponse<T>> {
-    return this.http({
+    return this.http<T>({
       method: HTTP_VERBS.PUT,
       endpoint,
       headers,
@@ -74,7 +86,7 @@ export class HttpService implements HttpInterfaceService {
     headers,
     body,
   }: HttpPatchRequest): Promise<HttpResponse<T>> {
-    return this.http({
+    return this.http<T>({
       method: HTTP_VERBS.PATCH,
       endpoint,
       headers,
@@ -86,7 +98,7 @@ export class HttpService implements HttpInterfaceService {
     endpoint,
     headers,
   }: HttpDeleteRequest): Promise<HttpResponse<T>> {
-    return this.http({
+    return this.http<T>({
       method: HTTP_VERBS.DELETE,
       endpoint,
       headers,
