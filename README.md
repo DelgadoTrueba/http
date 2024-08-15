@@ -346,7 +346,7 @@ MIT
 
 [npm-image]: https://img.shields.io/npm/v/%40delgadotrueba%2Fhttp
 [npm-url]: https://www.npmjs.com/package/@delgadotrueba/http
-[downloads-image]: https://img.shields.io/npm/:interval/%40delgadotrueba%2Fhttp
+[downloads-image]: https://img.shields.io/npm/dy/%40delgadotrueba%2Fhttp
 [downloads-url]: https://www.npmjs.com/package/@delgadotrueba/http
 [license-image]: http://img.shields.io/npm/l/%40delgadotrueba%2Fhttp.svg?style=flat
 [license-url]: LICENSE.md
