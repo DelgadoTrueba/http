@@ -1,10 +1,13 @@
 {
   "name": "@delgadotrueba/http",
   "version": "1.0.2",
-  "description": "httpService and httpMockService",
+  "description": "A personal HTTP service library featuring both httpService for real-world API interactions and httpMockService for testing and mock API simulations.",
   "author": "delgadotrueba",
   "keywords": [
-    "http"
+    "http",
+    "httpMock",
+    "httpMockService",
+    "httpService"
   ],
   "license": "MIT",
   "repository": {
