@@ -58,24 +58,31 @@
   },
   "files": [
     "dist.cjs/",
-    "dist.mjs/",
-    "interfaces/"
+    "dist.mjs/"
   ],
   "main": "./dist.cjs/src/index.js",
   "module": "./dist.mjs/src/index.js",
-  "types": "./interfaces/src/index.d.ts",
+  "types": "./dist.mjs/src/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist.cjs/src/index.js",
-      "import": "./dist.mjs/src/index.js",
-      "default": "./dist.cjs/src/index.js",
-      "types": "./interfaces/src/index.d.ts"
+      "require": {
+        "default": "./dist.cjs/src/index.js",
+        "types": "./dist.cjs/src/index.d.ts"
+      },
+      "import": {
+        "default": "./dist.mjs/src/index.js",
+        "types": "./dist.mjs/src/index.d.ts"
+      }
     },
     "./public-api": {
-      "require": "./dist.cjs/src/public-api.js",
-      "import": "./dist.mjs/src/public-api.js",
-      "default": "./dist.cjs/src/public-api.js",
-      "types": "./interfaces/src/public-api.d.ts"
+      "require": {
+        "default": "./dist.cjs/src/public-api.js",
+        "types": "./dist.cjs/src/public-api.d.ts"
+      },
+      "import": {
+        "default": "./dist.mjs/src/public-api.js",
+        "types": "./dist.mjs/src/public-api.d.ts"
+      }
     }
   },
   "sideEffects": false

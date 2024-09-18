@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
-    "declarationDir": "./interfaces",
+    "declarationDir": "./dist",
     "rootDir": ".",
     "baseUrl": ".",
     "target": "es2015",
