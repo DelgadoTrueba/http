@@ -24,7 +24,8 @@
     "test:cjs": "npx jest -c jest.cjs.config.js --verbose",
     "test:mjs": "npx jest -c jest.mjs.config.js --verbose",
     "test:coverage": "npm run test -- --coverage",
-    "prepare": "husky"
+    "prepare": "husky",
+    "prepublishOnly": "npm run test && npm run build"
   },
   "devDependencies": {
     "@commitlint/cli": "19.3.0",
