@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    /*Build*/
     "outDir": "./dist",
     "declarationDir": "./dist",
     "rootDir": ".",
