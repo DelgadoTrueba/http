@@ -1,6 +1,6 @@
 {
   "name": "@delgadotrueba/http",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A personal HTTP service library featuring both httpService for real-world API interactions and httpMockService for testing and mock API simulations.",
   "author": "delgadotrueba",
   "keywords": [
@@ -16,15 +16,16 @@
   },
   "scripts": {
     "build": "npm run build:cjs && npm run build:mjs",
-    "build:cjs": "npx tsc -p tsconfig.cjs.json",
-    "build:mjs": "npx tsc -p tsconfig.mjs.json",
+    "build:cjs": "npx tsc -p tsconfig.cjs.json && node scripts/rename-files.js cjs",
+    "build:mjs": "npx tsc -p tsconfig.mjs.json && node scripts/rename-files.js mjs",
     "lint": "npx eslint  -c .eslintrc.json src/**/*.ts",
     "lint:fix": "npm run lint -- --fix",
     "test": "npm run test:cjs && npm run test:mjs",
     "test:cjs": "npx jest -c jest.cjs.config.js --verbose",
     "test:mjs": "npx jest -c jest.mjs.config.js --verbose",
     "test:coverage": "npm run test -- --coverage",
-    "prepare": "husky"
+    "prepare": "husky",
+    "prepublishOnly": "npm run test && npm run build"
   },
   "devDependencies": {
     "@commitlint/cli": "19.3.0",
@@ -53,28 +54,35 @@
     "tslib": "2.6.3"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "files": [
-    "dist.cjs/",
-    "dist.mjs/",
-    "interfaces/"
+    "dist"
   ],
-  "main": "./dist.cjs/src/index.js",
-  "module": "./dist.mjs/src/index.js",
-  "types": "./interfaces/src/index.d.ts",
+  "main": "./dist/src/index.cjs.js",
+  "module": "./dist/src/index.mjs.js",
+  "types": "./dist/src/index.mjs.d.ts",
   "exports": {
     ".": {
-      "require": "./dist.cjs/src/index.js",
-      "import": "./dist.mjs/src/index.js",
-      "default": "./dist.cjs/src/index.js",
-      "types": "./interfaces/src/index.d.ts"
+      "require": {
+        "default": "./dist/src/index.cjs.js",
+        "types": "./dist/src/index.cjs.d.ts"
+      },
+      "import": {
+        "default": "./dist/src/index.mjs.js",
+        "types": "./dist/src/index.mjs.d.ts"
+      }
     },
     "./public-api": {
-      "require": "./dist.cjs/src/public-api.js",
-      "import": "./dist.mjs/src/public-api.js",
-      "default": "./dist.cjs/src/public-api.js",
-      "types": "./interfaces/src/public-api.d.ts"
+      "require": {
+        "default": "./dist/src/public-api.cjs.js",
+        "types": "./dist/src/public-api.cjs.d.ts"
+      },
+      "import": {
+        "default": "./dist/src/public-api.mjs.js",
+        "types": "./dist/src/public-api.mjs.d.ts"
+      }
     }
   },
   "sideEffects": false
