@@ -60,6 +60,8 @@
   "files": [
     "dist"
   ],
+  "main": "./dist/cjs/src/index.js",
+  "module": "./dist/mjs/src/index.js",
   "types": "./dist/mjs/src/index.d.ts",
   "exports": {
     ".": {
