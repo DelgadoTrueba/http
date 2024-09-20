@@ -16,8 +16,8 @@
   },
   "scripts": {
     "build": "npm run build:cjs && npm run build:mjs",
-    "build:cjs": "npx tsc -p tsconfig.cjs.json && node scripts/rename-files.js cjs",
-    "build:mjs": "npx tsc -p tsconfig.mjs.json && node scripts/rename-files.js mjs",
+    "build:cjs": "npx tsc -p tsconfig.cjs.json",
+    "build:mjs": "npx tsc -p tsconfig.mjs.json",
     "lint": "npx eslint  -c .eslintrc.json src/**/*.ts",
     "lint:fix": "npm run lint -- --fix",
     "test": "npm run test:cjs && npm run test:mjs",
@@ -60,28 +60,26 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/src/index.cjs.js",
-  "module": "./dist/src/index.mjs.js",
-  "types": "./dist/src/index.mjs.d.ts",
+  "types": "./dist/mjs/src/index.d.ts",
   "exports": {
     ".": {
       "require": {
-        "default": "./dist/src/index.cjs.js",
-        "types": "./dist/src/index.cjs.d.ts"
+        "default": "./dist/cjs/src/index.js",
+        "types": "./dist/cjs/src/index.d.ts"
       },
       "import": {
-        "default": "./dist/src/index.mjs.js",
-        "types": "./dist/src/index.mjs.d.ts"
+        "default": "./dist/mjs/src/index.js",
+        "types": "./dist/mjs/src/index.d.ts"
       }
     },
     "./public-api": {
       "require": {
-        "default": "./dist/src/public-api.cjs.js",
-        "types": "./dist/src/public-api.cjs.d.ts"
+        "default": "./dist/cjs/src/public-api.js",
+        "types": "./dist/cjs/src/public-api.d.ts"
       },
       "import": {
-        "default": "./dist/src/public-api.mjs.js",
-        "types": "./dist/src/public-api.mjs.d.ts"
+        "default": "./dist/mjs/src/public-api.js",
+        "types": "./dist/mjs/src/public-api.d.ts"
       }
     }
   },
