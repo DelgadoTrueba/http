@@ -7,8 +7,10 @@ import type {
 } from './HttpMock.interface.service';
 import type {
   HttpGetRequest,
-  HttpRequest,
   HttpDeleteRequest,
+  HttpPostRequest,
+  HttpPutRequest,
+  HttpPatchRequest,
 } from './model/request/HttpRequest.model';
 import type { HttpResponse } from './model/response/HttpResponse.model';
 import { HttpResponseError } from './model/response/HttpResponseError.model';
@@ -119,7 +121,11 @@ export class HttpMockService implements HttpInterfaceMockAdapter {
     this.mockResponsesPost.set(removeBaseURL(urlPattern), mockFnc);
   }
 
-  post<T>({ endpoint, body, headers }: HttpRequest): Promise<HttpResponse<T>> {
+  post<T>({
+    endpoint,
+    body,
+    headers,
+  }: HttpPostRequest): Promise<HttpResponse<T>> {
     const urlsPattern = Array.from(this.mockResponsesPost.keys());
     return this.httpMock(endpoint, urlsPattern, this.mockResponsesPost, {
       headers: {
@@ -134,7 +140,11 @@ export class HttpMockService implements HttpInterfaceMockAdapter {
     this.mockResponsesPut.set(removeBaseURL(urlPattern), mockFnc);
   }
 
-  put<T>({ endpoint, body, headers }: HttpRequest): Promise<HttpResponse<T>> {
+  put<T>({
+    endpoint,
+    body,
+    headers,
+  }: HttpPutRequest): Promise<HttpResponse<T>> {
     const urlsPattern = Array.from(this.mockResponsesPut.keys());
     return this.httpMock(endpoint, urlsPattern, this.mockResponsesPut, {
       headers: {
@@ -149,7 +159,11 @@ export class HttpMockService implements HttpInterfaceMockAdapter {
     this.mockResponsesPatch.set(removeBaseURL(urlPattern), mockFnc);
   }
 
-  patch<T>({ endpoint, headers, body }: HttpRequest): Promise<HttpResponse<T>> {
+  patch<T>({
+    endpoint,
+    headers,
+    body,
+  }: HttpPatchRequest): Promise<HttpResponse<T>> {
     const urlsPattern = Array.from(this.mockResponsesPatch.keys());
     return this.httpMock(endpoint, urlsPattern, this.mockResponsesPatch, {
       headers: {
